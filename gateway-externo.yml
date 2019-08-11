@@ -1,13 +1,13 @@
 server:
-  port: 8083
+  port: 8084
   
 spring:
   cloud:
     gateway:
       routes:
-      - id: sgd-api
-        uri: http://localhost:8082
+      - id: mgd
+        uri: http://localhost:8081
         predicates:
-        - Path=/msw/**
+        - Path=/msw-e/**
         filters:
-        - RewritePath=/msw/(?<segmento>.*), /sgd-api/$\{segmento}
+        - RewritePath=/msw-e/(?<segmento>.*), /mgd-b/$\{segmento}
