@@ -5,12 +5,21 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: sgd-api
-        uri: http://localhost:8082
+      - uri: http://192.168.20.141:8080/sum-api/rest
         predicates:
-        - Path=/gtw-i/**
+        - Path=/gtw-i/alumno/**
         filters:
-        - RewritePath=/gtw-i/(?<segmento>.*), /sgd-api/$\{segmento}
+        - RewritePath=/gtw-i/alumno/(?<segmento>.*), /alumno/$\{segmento}
+      - uri: http://192.168.20.141:8080/sgd-api/rest
+        predicates:
+        - Path=/gtw-i/expediente/**
+        filters:
+        - RewritePath=/gtw-i/expediente/(?<segmento>.*), /expediente/$\{segmento}
+      - uri: http://192.168.20.141:8080/sgt-api/api
+        predicates:
+        - Path=/gtw-i/padron-registro/**
+        filters:
+        - RewritePath=/gtw-i/padron-registro/(?<segmento>.*), /padron-registro/$\{segmento}
 management:
   endpoints:
     web:
