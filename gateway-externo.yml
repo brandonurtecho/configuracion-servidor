@@ -11,3 +11,8 @@ spring:
         - Path=/gtw-e/**
         filters:
         - RewritePath=/gtw-e/(?<segmento>.*), /mgd-b/$\{segmento}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
