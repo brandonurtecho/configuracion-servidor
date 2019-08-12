@@ -7,9 +7,19 @@ spring:
       routes:
       - uri: http://192.168.20.141:8080
         predicates:
+        - Path=/gtw-i/rest/alumno**
+        filters:
+        - RewritePath=/gtw-i/rest/alumno(?<segmento>.*), /sum-api/rest/alumno$\{segmento}
+      - uri: http://192.168.20.141:8080
+        predicates:
         - Path=/gtw-i/rest/expediente**
         filters:
         - RewritePath=/gtw-i/rest/expediente(?<segmento>.*), /sgd-api/rest/expediente$\{segmento}
+      - uri: http://192.168.20.141:8080
+        predicates:
+        - Path=/gtw-i/api/padron-registro**
+        filters:
+        - RewritePath=/gtw-i/rest/padron-registro(?<segmento>.*), /sgt-api/api/padron-registro$\{segmento}
 management:
   endpoints:
     web:
