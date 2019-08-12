@@ -19,7 +19,7 @@ spring:
         predicates:
         - Path=/gtw-i/api/padron-registro**
         filters:
-        - RewritePath=/gtw-i/rest/padron-registro(?<segmento>.*), /sgt-api/api/padron-registro$\{segmento}
+        - RewritePath=/gtw-i/api/padron-registro(?<segmento>.*), /sgt-api/api/padron-registro$\{segmento}
 management:
   endpoints:
     web:
