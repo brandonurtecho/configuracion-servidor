@@ -10,11 +10,11 @@ spring:
         - Path=/gtw-i/alumno/**
         filters:
         - RewritePath=/gtw-i/alumno/(?<segmento>.*), /alumno/$\{segmento}
-      - uri: http://192.168.20.141:8080/sgd-api/rest
+      - uri: http://192.168.20.141:8080/sgd-api
         predicates:
-        - Path=/gtw-i/expediente/**
+        - Path=/gtw-i/rest/expediente/**
         filters:
-        - RewritePath=/gtw-i/expediente/(?<segmento>.*), /expediente/$\{segmento}
+        - RewritePath=/gtw-i/rest/expediente/(?<segmento>.*), /rest/expediente/$\{segmento}
       - uri: http://192.168.20.141:8080/sgt-api/api
         predicates:
         - Path=/gtw-i/padron-registro/**
