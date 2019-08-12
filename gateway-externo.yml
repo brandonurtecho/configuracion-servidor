@@ -5,8 +5,7 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: mgd
-        uri: http://localhost:8081
+      - uri: http://localhost:8081
         predicates:
         - Path=/gtw-e/**
         filters:
