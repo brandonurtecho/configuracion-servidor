@@ -8,6 +8,6 @@ spring:
       - id: sgd-api
         uri: http://localhost:8082
         predicates:
-        - Path=/weqweqweqw/**
+        - Path=/gtw-i/**
         filters:
-        - RewritePath=/weqweqweqw/(?<segmento>.*), /sgd-api/$\{segmento}
+        - RewritePath=/gtw-i/(?<segmento>.*), /sgd-api/$\{segmento}
