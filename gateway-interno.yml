@@ -11,3 +11,8 @@ spring:
         - Path=/gtw-i/**
         filters:
         - RewritePath=/gtw-i/(?<segmento>.*), /sgd-api/$\{segmento}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
