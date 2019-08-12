@@ -8,9 +8,9 @@ spring:
       - id: mgd
         uri: http://localhost:8081
         predicates:
-        - Path=/gate/**
+        - Path=/gtw-e/**
         filters:
-        - RewritePath=/gate/(?<segmento>.*), /mgd-b/$\{segmento}
+        - RewritePath=/gtw-e/(?<segmento>.*), /mgd-b/$\{segmento}
 management:
   endpoints:
     web:
