@@ -7,9 +7,9 @@ spring:
       routes:
       - uri: http://localhost:8081/mgd-b
         predicates:
-        - Path=/gtw-e/**
+        - Path=/gtw-app/**
         filters:
-        - RewritePath=/gtw-e/(?<segmento>.*), /$\{segmento}
+        - RewritePath=/gtw-app/(?<segmento>.*), /$\{segmento}
 management:
   endpoints:
     web:
