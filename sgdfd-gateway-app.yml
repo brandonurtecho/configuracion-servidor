@@ -5,11 +5,11 @@ spring:
   cloud:
     gateway:
       routes:
-      - uri: http://localhost:8081/mgd-b
+      - uri: http://localhost:8081
         predicates:
         - Path=/gtw-app/**
         filters:
-        - RewritePath=/gtw-app/(?<segmento>.*), /$\{segmento}
+        - RewritePath=/gtw-app/(?<segmento>.*), /mgd-b/$\{segmento}
 management:
   endpoints:
     web:
