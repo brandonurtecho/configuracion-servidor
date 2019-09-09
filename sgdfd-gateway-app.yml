@@ -1,0 +1,17 @@
+server:
+  port: 8084
+  
+spring:
+  cloud:
+    gateway:
+      routes:
+      - uri: http://localhost:8081/mgd-b
+        predicates:
+        - Path=/gtw-e/**
+        filters:
+        - RewritePath=/gtw-e/(?<segmento>.*), /$\{segmento}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
