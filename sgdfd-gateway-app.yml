@@ -10,7 +10,7 @@ spring:
         - Path=/gtw-app/**
         filters:
         - RewritePath=/gtw-app/(?<segmento>.*), /mgd-b/$\{segmento}
-      - uri: http://200.62.146.174:8087
+      - uri: http://192.168.99.1:8087
         predicates:
         - Path=/gtw-app/**
         filters:
