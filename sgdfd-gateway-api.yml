@@ -7,9 +7,9 @@ spring:
       routes:      
       - uri: http://172.16.242.26:9090
         predicates:
-        - Path=/gtw-app/**
+        - Path=/gtw-api/**
         filters:
-        - RewritePath=/gtw-app/(?<segmento>.*), /sgdfd-ssa/$\{segmento}
+        - RewritePath=/gtw-api/(?<segmento>.*), /sgdfd-ssa/$\{segmento}
 management:
   endpoints:
     web:
