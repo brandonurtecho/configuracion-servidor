@@ -9,7 +9,7 @@ spring:
         predicates:
         - Path=/gtw-api/**
         filters:
-        - RewritePath=/gtw-api/(?<segmento>.*), /$\{segmento}
+        - RewritePath=/gtw-api/(?<segmento>.*), /sgdfd-ssa/$\{segmento}
 management:
   endpoints:
     web:
