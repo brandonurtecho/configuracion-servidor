@@ -5,7 +5,7 @@ spring:
   cloud:
     gateway:
       routes:      
-      - uri: http://172.16.242.26:9090/sgdfd-ssa
+      - uri: http://172.16.242.26:9090/sgdfd-ssa/
         predicates:
         - Path=/gtw-api/**
         filters:
