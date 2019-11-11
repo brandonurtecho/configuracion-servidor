@@ -4,17 +4,17 @@ server:
 spring:
   cloud:
     gateway:
-      routes:      
-      - uri: http://172.16.242.26:9090/sgdfd-ssa/
-        predicates:
-        - Path=/gtw-api/**
-        filters:
-        - RewritePath=/gtw-api/(?<segmento>.*), /sgdfd-ssa/$\{segmento}
+      routes:            
       - uri: http://172.16.242.26:9090/sgdfd-mat-backend-boot/
         predicates:
         - Path=/gtw-api/**
         filters:
         - RewritePath=/gtw-api/(?<segmento>.*), /sgdfd-mat-backend-boot/$\{segmento}
+      - uri: http://172.16.242.26:9090/sgdfd-ssa/
+        predicates:
+        - Path=/gtw-api/**
+        filters:
+        - RewritePath=/gtw-api/(?<segmento>.*), /sgdfd-ssa/$\{segmento}
 management:
   endpoints:
     web:
