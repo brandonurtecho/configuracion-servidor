@@ -4,12 +4,7 @@ server:
 spring:
   cloud:
     gateway:
-      routes:      
-      - uri: http://172.16.242.26:9090
-        predicates:
-        - Path=/gtw-api/**
-        filters:
-        - RewritePath=/gtw-api/(?<segmento>.*), /sgdfd-ssa/$\{segmento}
+      routes:
       - uri: http://172.16.242.26:9090
         predicates:
         - Path=/gtw-api/**
